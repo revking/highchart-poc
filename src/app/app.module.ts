@@ -1,13 +1,30 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
+import { HighchartsChartComponent } from 'highcharts-angular';
+import {PiechartComponent} from 'src/app/piechart/piechart.component';
+
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HelloComponent } from './hello.component';
+import { from } from 'rxjs';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule ],
-  declarations: [ AppComponent, HelloComponent ],
-  bootstrap:    [ AppComponent ]
+  declarations: [
+    AppComponent,
+    HighchartsChartComponent,
+    PiechartComponent
+  ],
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot([
+      {path: 'piechart', component: PiechartComponent},
+      //{path: 'barchart', component: HighchartsChartComponent}
+    ]),
+    AppRoutingModule,
+    
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
