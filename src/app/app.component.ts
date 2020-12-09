@@ -1,49 +1,35 @@
 import { Component } from "@angular/core";
 import * as Highcharts from "highcharts";
-import Drilldown from "highcharts/modules/drilldown";
-
-Drilldown(Highcharts);
 
 @Component({
-  selector: "my-app",
+  selector: "app-root",
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
-  title = "HighChart";
-  highcharts = Highcharts;
+  title = "HighChart Bar";
 
+  highcharts = Highcharts;
   chartOptions = {
     chart: {
-      // styledMode: true
-      plotBackgroundColor: null,
-      plotBorderWidth: null,
-      plotShadow: false,
-      type: "pie"
+      type: "bar"
     },
     title: {
-      text: "Pie HighCharts Sample"
+      text: "Bar HighChart Sample"
     },
-    tooltip: {
-      pointFormat: "{point.name}:<b>{point.percentage:.1f}%</b>"
+    xAxis: {
+      type: "category"
+    },
+
+    legend: {
+      enabled: true
     },
     plotOptions: {
-      pie: {
-        allowPointSelect: true,
-        cursor: "pointer",
-        size: 200,
-        animation: {
-          duration: 1000
-        },
+      series: {
+        borderWidth: 0,
         dataLabels: {
-          enabled: true,
-          padding: 0,
-          format: "{point.name}</b>:{point.percentage:.1f} %",
-          style: {
-            color: Highcharts.theme || "black"
-          }
-        },
-        showInLegend: true
+          enabled: true
+        }
       }
     },
 
@@ -53,257 +39,18 @@ export class AppComponent {
         colorByPoint: true,
         data: [
           {
-            name: "dropdown54",
+            name: "Animals",
             y: 5,
             drilldown: "animals"
           },
-
-          {
-            name: "Animals",
-            y: 2,
-            drilldown: "animals"
-          },
-
-          {
-            name: "Animals",
-            y: 2,
-            drilldown: "animals"
-          },
-
-          {
-            name: "Animals",
-            y: 2,
-            drilldown: "animals"
-          },
-
-          {
-            name: "Animals",
-            y: 2,
-            drilldown: "animals"
-          },
-
-          {
-            name: "Animals",
-            y: 2,
-            drilldown: "animals"
-          },
-
-          {
-            name: "Animals",
-            y: 2,
-            drilldown: "animals"
-          },
-
-          {
-            name: "Animals",
-            y: 2,
-            drilldown: "animals"
-          },
-
-          {
-            name: "Animals",
-            y: 2,
-
-            drilldown: "animals"
-          },
-
           {
             name: "Fruits",
             y: 2,
-
             drilldown: "fruits"
           },
-
-          {
-            name: "Fruits",
-            y: 2,
-
-            drilldown: "fruits"
-          },
-
-          {
-            name: "Fruits",
-            y: 2,
-
-            drilldown: "fruits"
-          },
-
-          {
-            name: "Fruits",
-            y: 2,
-
-            drilldown: "fruits"
-          },
-
-          {
-            name: "Fruits",
-            y: 2,
-
-            drilldown: "fruits"
-          },
-
-          {
-            name: "Fruits",
-            y: 2,
-
-            drilldown: "fruits"
-          },
-
-          {
-            name: "Fruits",
-            y: 2,
-
-            drilldown: "fruits"
-          },
-
-          {
-            name: "Fruits",
-            y: 2,
-
-            drilldown: "fruits"
-          },
-
-          {
-            name: "Fruits",
-            y: 2,
-
-            drilldown: "fruits"
-          },
-
-          {
-            name: "Fruits",
-            y: 2,
-
-            drilldown: "fruits"
-          },
-
-          {
-            name: "Fruits",
-            y: 2,
-
-            drilldown: "fruits"
-          },
-
-          {
-            name: "Fruits",
-            y: 2,
-
-            drilldown: "fruits"
-          },
-
-          {
-            name: "Fruits",
-            y: 2,
-
-            drilldown: "fruits"
-          },
-
-          {
-            name: "Fruits",
-            y: 2,
-
-            drilldown: "fruits"
-          },
-
-          {
-            name: "Fruits",
-            y: 2,
-
-            drilldown: "fruits"
-          },
-
-          {
-            name: "Fruits",
-            y: 2,
-
-            drilldown: "fruits"
-          },
-
-          {
-            name: "Fruits",
-            y: 2,
-
-            drilldown: "fruits"
-          },
-
-          {
-            name: "Fruits",
-            y: 2,
-
-            drilldown: "fruits"
-          },
-
-          {
-            name: "Fruits",
-            y: 2,
-
-            drilldown: "fruits"
-          },
-
-          {
-            name: "Fruits",
-            y: 2,
-
-            drilldown: "fruits"
-          },
-
-          {
-            name: "Fruits",
-            y: 2,
-            dataLabels: {
-              padding: 0
-            },
-            drilldown: "fruits"
-          },
-          {
-            name: "Fruits",
-            y: 2,
-
-            drilldown: "fruits"
-          },
-
-          {
-            name: "Fruits",
-            y: 2,
-
-            drilldown: "fruits"
-          },
-          {
-            name: "Fruits",
-            y: 2,
-
-            drilldown: "fruits"
-          },
-
-          {
-            name: "Fruits",
-            y: 2,
-
-            drilldown: "fruits"
-          },
-
-          {
-            name: "Fruits",
-            y: 2,
-
-            drilldown: "fruits"
-          },
-
-          {
-            name: "Fruits",
-            y: 2,
-            dataLabels: {
-              padding: 0
-            },
-            drilldown: "fruits"
-          },
-
           {
             name: "Cars",
-            y: 4,
-            dataLabels: {
-              padding: 0
-            }
+            y: 4
           }
         ]
       }

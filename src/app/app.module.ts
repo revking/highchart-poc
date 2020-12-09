@@ -9,13 +9,7 @@ import { from } from "rxjs";
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [
-    BrowserModule,
-    HighchartsChartComponent,
-    RouterModule.forRoot([
-      //{path: 'barchart', component: HighchartsChartComponent}
-    ])
-  ],
+  imports: [BrowserModule, HighchartsChartComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
